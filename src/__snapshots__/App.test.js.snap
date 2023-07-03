@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div>
+  <div>
+    <h1>
+      Hello from App
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Testing app component Test 1`] = `
+<div>
+  <div>
+    <h1>
+      Hello from App
+    </h1>
+    <button />
+  </div>
+</div>
+`;
