@@ -1,13 +1,18 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import CartContext from "./components/store/cart-context";
+import ProductItems from "./components/products/ProductItems";
+import ProductsWrapper from "./components/ui/ProductsWrapper";
+import Header from "./components/ui/Header";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const ctx = useContext(CartContext);
 
-  const fetchItemsRequest = async () => {
-    // https://fakestoreapi.com/products
+  useEffect(() => {
+    fetchItemsRequest();
+  }, []);
 
+  const fetchItemsRequest = async () => {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
 
@@ -34,16 +39,18 @@ const Products = () => {
     }
   };
 
-  const buttonTest = () => {
-    console.log(products);
-  };
-
   return (
-    <div>
-      <h1>Hello from Products</h1>
-      <button onClick={fetchItemsRequest}>FETCH</button>
-      <button onClick={buttonTest}>TEST ARR</button>
-    </div>
+    <ProductsWrapper>
+      <Header title={'Products'}/>
+      {products.map((item) => (
+        <ProductItems
+          title={item.title}
+          price={item.price}
+          id={item.id}
+          key={item.id}
+        />
+      ))}
+    </ProductsWrapper>
   );
 };
 
