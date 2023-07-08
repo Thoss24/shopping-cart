@@ -1,12 +1,12 @@
-import { useContext, useState, useEffect } from "react";
-import CartContext from "./components/store/cart-context";
+import { useState, useEffect } from "react";
 import ProductItems from "./components/products/ProductItems";
 import ProductsWrapper from "./components/ui/ProductsWrapper";
 import Header from "./components/ui/Header";
+import ShoppingCartModal from "./components/modal/ShoppingCartModal";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const ctx = useContext(CartContext);
+  const [shoppingCartVisible, setShoppingCartVisible] = useState(false)
 
   useEffect(() => {
     fetchItemsRequest();
@@ -39,9 +39,27 @@ const Products = () => {
     }
   };
 
+  let shoppingCartDisplay;
+
+  const handleShoppingCartVisible = () => {
+    setShoppingCartVisible(true)
+  };
+
+  const handleShoppingCartInvisible = () => {
+    setShoppingCartVisible(false)
+  };
+
+  if (shoppingCartVisible) {
+    shoppingCartDisplay = (
+      <ShoppingCartModal
+      hideShoppingCart={handleShoppingCartInvisible}
+      />
+    )
+  }
+
   return (
     <ProductsWrapper>
-      <Header title={'Products'}/>
+      <Header title={'Products'} showShoppingCart={handleShoppingCartVisible}/>
       {products.map((item) => (
         <ProductItems
           title={item.title}
@@ -50,6 +68,7 @@ const Products = () => {
           key={item.id}
         />
       ))}
+      {shoppingCartDisplay}
     </ProductsWrapper>
   );
 };

@@ -1,5 +1,6 @@
 .header {
     display: flex;
+    align-items: center;
     width: 100%;
     justify-content: space-between;
 }
@@ -9,5 +10,20 @@
 }
 
 .amount {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 30px;
+    border: none;
+    border-radius: 8px;
     margin-right: 20px;
+    height: 80%;
 }
+
+.amount:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+

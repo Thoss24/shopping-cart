@@ -24,7 +24,6 @@ const ProductItems = (props) => {
       <p>{props.price}</p>
       <input type="number" ref={itemAmount}/>
       <button onClick={addItem}>Add</button>
-      <button>Remove</button>
     </ProductItemWrapper>
   );
 };

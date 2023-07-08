@@ -28,7 +28,7 @@ const cartReducer = (state, action) => {
       // create a variable and assign it the value of the pre-existing item. using our already defined existingCartItem variable. and increase it's 'amount' by adding the new amount to the old amount
       const updatedItem = {
         ...existingCartItem,
-        cartTotalAmount: existingCartItem.amount + action.item.amount,
+        amount: existingCartItem.amount + action.item.amount,
       };
 
       // assign our updatedItems variable with the value of the pre-existing cartItems array which contains all items added up to this point
@@ -49,6 +49,34 @@ const cartReducer = (state, action) => {
     };
   }
 
+  if (action.type === 'REMOVE') {
+    let currentCartTotal = state.cartTotalAmount - action.item.price;
+    
+    let existingItemIndex = state.cartItems.findIndex((item) => item.id === action.item.id);
+
+    let existingCartItem = state.cartItems[existingItemIndex]
+
+    let updatedItems;
+
+    if (existingCartItem.amount === 1) {
+      // return array that does not include selected item
+      updatedItems = state.cartItems.filter((item) => item.id !== action.item.id)
+    } else {
+      const updatedItem = {
+        ...existingCartItem,
+        amount: existingCartItem.amount - 1
+      };
+      updatedItems = [...state.cartItems];
+      updatedItems[existingItemIndex] = updatedItem
+    }
+   
+    
+    return {
+      cartItems: updatedItems,
+      cartTotalAmount: currentCartTotal
+    }
+  }
+
   return defaultCartState;
 };
 
@@ -62,10 +90,10 @@ const CartProvider = (props) => {
     });
   };
 
-  const removeCartItem = (id) => {
+  const removeCartItem = (item) => {
     setCartAction({
       type: "REMOVE",
-      id: id,
+      item: item,
     });
   };
 
