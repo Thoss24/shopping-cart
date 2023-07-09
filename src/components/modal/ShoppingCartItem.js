@@ -1,4 +1,5 @@
 import CartContext from "../store/cart-context";
+import classes from './ShoppingCartItem.module.css';
 import React, { useContext } from "react";
 
 const ShoppingCartItem = (props) => {
@@ -24,12 +25,16 @@ const ShoppingCartItem = (props) => {
     };
 
     return (
-        <div>
+        <div className={classes.shell}>
+            <div className={classes.content}>
             <p>{props.title}</p>
-            <p>{props.amount}</p>
-            <p>{props.price}</p>
-            <button onClick={removeItem}>-</button>
-            <button onClick={addItem}>+</button>
+            <p>Qty: {props.amount}</p>
+            <p>£ {props.price}</p>
+            </div>
+            <div className={classes['buttons-container']}>
+            <button className={classes.buttons} onClick={removeItem}>-</button>
+            <button className={classes.buttons} onClick={addItem}>+</button>
+            </div>
         </div>
     )
 };

@@ -3,6 +3,7 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .title {
@@ -23,7 +24,7 @@
 }
 
 .amount:hover {
-    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.50);
     cursor: pointer;
 }
 

@@ -2,14 +2,14 @@ import CartContext from "../store/cart-context";
 import classes from './ModalCheckout.module.css';
 import React, { useContext } from "react";
 
-const ModalCheckout = () => {
+const ModalCheckout = (props) => {
 
     let ctx = useContext(CartContext)
 
     return (
         <div className={classes.checkout}>
-            <span><strong>{ctx.cartTotalAmount}</strong></span>
-            <button>Checkout</button>
+            <span><strong>£ {ctx.cartTotalAmount.toFixed(2)}</strong></span>
+            <button className={classes['checkout-button']} onClick={props.hideCart}>Checkout</button>
         </div>
     )
 };

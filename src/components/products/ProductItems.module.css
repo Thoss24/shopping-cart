@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.add-item {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.content-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}

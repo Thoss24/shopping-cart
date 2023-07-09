@@ -1,8 +1,10 @@
-.shell {
+.product-items-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 8px;
     outline: 1px solid black;
     height: 300px;
     width: 350px;
+    padding: 8px;
 }

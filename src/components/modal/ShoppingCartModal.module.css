@@ -15,3 +15,9 @@
 .backdrop:hover {
     cursor: pointer;
 }
+
+.cart-empty {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}

@@ -1,5 +1,22 @@
 .checkout {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    margin: 20px;
+}
+
+.checkout-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    border: none;
+    background-color: white;
+    font-size: 19px;
+    font-weight: 800;
+    border-radius: 8px;
+}
+
+.checkout-button:hover {
+    color: rgba(0, 0, 0, 0.50);
+    cursor: pointer;
 }

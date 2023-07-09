@@ -10,12 +10,16 @@ const ShoppingCartModal = (props) => {
 
     const ctx = useContext(CartContext);
 
+    let shoppingCartEmpty = (
+      <div className={classes['cart-empty']}><h2>Shopping Cart Empty.</h2></div>
+    );
+
   return (
   <ModalWrapper>
     <div className={classes.backdrop} onClick={props.hideShoppingCart}/>
     <CartItemsWrapper>
         <div className={classes.items}>
-    {ctx.cartItems.map((item) => (
+    {ctx.cartItems.length !== 0 ? ctx.cartItems.map((item) => (
         <ShoppingCartItem
         price={item.price}
         amount={item.amount}
@@ -23,9 +27,9 @@ const ShoppingCartModal = (props) => {
         key={item.id}
         id={item.id}
         />
-    ))}
+    )) : shoppingCartEmpty}
     </div>
-    <ModalCheckout />
+    <ModalCheckout hideCart={props.hideShoppingCart}/>
     </CartItemsWrapper>
   </ModalWrapper>)
 };
