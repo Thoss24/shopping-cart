@@ -21,13 +21,14 @@ const ProductItems = (props) => {
   return (
     <ProductItemWrapper>
       <div className={classes['content-container']}>
-      <img src="" alt="placeholder" />
+      <img src={props.image} alt="placeholder" />
       <p>{props.title}</p>
       <p>{props.description}</p>
-      <p>{props.price}</p>
+      <p>£ {props.price}</p>
       </div>
       <div className={classes['add-item']}>
-      <input type="number" ref={itemAmount}/>
+      <label htmlFor="quantity">Qty</label>
+      <input type="number" ref={itemAmount} id="quantity" defaultValue="1" min="1"/>
       <button onClick={addItem}>Add</button>
       </div>
     </ProductItemWrapper>

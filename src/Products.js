@@ -22,6 +22,8 @@ const Products = () => {
 
       const data = await response.json();
 
+      console.log(data)
+
       const loadedData = [];
 
       for (const key in data) {
@@ -29,6 +31,7 @@ const Products = () => {
           title: data[key].title,
           description: data[key].description,
           price: data[key].price,
+          image: data[key].image,
           id: data[key].id,
         });
       }
@@ -64,6 +67,7 @@ const Products = () => {
         <ProductItems
           title={item.title}
           price={item.price}
+          image={item.image}
           id={item.id}
           key={item.id}
         />
