@@ -27,9 +27,11 @@ const ProductItems = (props) => {
       <p>£ {props.price}</p>
       </div>
       <div className={classes['add-item']}>
+      <div className={classes['input-container']}>
       <label htmlFor="quantity">Qty</label>
       <input type="number" ref={itemAmount} id="quantity" defaultValue="1" min="1"/>
-      <button onClick={addItem}>Add</button>
+      </div>
+      <button onClick={addItem} className={classes['add-item-button']}>Add</button>
       </div>
     </ProductItemWrapper>
   );
