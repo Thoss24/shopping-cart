@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import ProductItems from "./components/products/ProductItems";
 import ProductsWrapper from "./components/ui/ProductsWrapper";
+import ProductsContentWrapper from "./components/ui/ProductsContentWrapper";
 import Header from "./components/ui/Header";
+import Footer from "./components/ui/Footer";
 import ShoppingCartModal from "./components/modal/ShoppingCartModal";
 
 const Products = () => {
@@ -63,6 +65,7 @@ const Products = () => {
   return (
     <ProductsWrapper>
       <Header title={'Products'} showShoppingCart={handleShoppingCartVisible}/>
+      <ProductsContentWrapper>
       {products.map((item) => (
         <ProductItems
           title={item.title}
@@ -73,6 +76,8 @@ const Products = () => {
         />
       ))}
       {shoppingCartDisplay}
+      </ProductsContentWrapper>
+      <Footer />
     </ProductsWrapper>
   );
 };

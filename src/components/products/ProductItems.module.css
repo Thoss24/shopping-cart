@@ -51,3 +51,7 @@ input {
     color: rgba(0, 0, 0, 0.50);
     cursor: pointer;
 }
+
+.add-item-button:active {
+    transform: rotateX(25deg)
+}

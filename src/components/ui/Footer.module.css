@@ -1,0 +1,19 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.github-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.github-icon:hover {
+    cursor: pointer;
+}

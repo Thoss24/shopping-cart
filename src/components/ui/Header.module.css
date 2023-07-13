@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: space-around;
+    height: 10vh;
 }
 
 .title {
@@ -26,5 +26,17 @@
 .amount:hover {
     color: rgba(0, 0, 0, 0.50);
     cursor: pointer;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.tabs > h2:hover {
+    color: rgba(0, 0, 0, 0.50);
+    cursor: pointer;
+    text-decoration: underline;
 }
 
