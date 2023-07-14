@@ -1,4 +1,4 @@
-import classes from './ProductsWrapper.module.css';
+import classes from './PageWrapper.module.css';
 
 const ProductsWrapper = (props) => {
     return (

@@ -1,4 +1,4 @@
-import CartContext from "../store/cart-context";
+import CartContext from "../../store/cart-context";
 import classes from './ModalCheckout.module.css';
 import React, { useContext } from "react";
 

@@ -5,13 +5,17 @@
     text-align: center;
     padding: 10px;
     left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
+    background-color: black;
+    max-height: 10vh;
 }
 
 .github-icon {
     height: 50px;
     width: 50px;
+    color: white;
 }
 
 .github-icon:hover {

@@ -1,4 +1,4 @@
-import CartContext from "../store/cart-context";
+import CartContext from "../../store/cart-context";
 import classes from './ShoppingCartItem.module.css';
 import React, { useContext } from "react";
 
@@ -13,6 +13,7 @@ const ShoppingCartItem = (props) => {
             amount: 1,
             id: props.id
         });
+        console.log(props.image)
     };
 
     const removeItem = () => {
@@ -26,6 +27,9 @@ const ShoppingCartItem = (props) => {
 
     return (
         <div className={classes.shell}>
+            <div className={classes.image}>
+                <img src={props.image} alt="" />
+            </div>
             <div className={classes.content}>
             <p>{props.title}</p>
             <p>Qty: {props.amount}</p>

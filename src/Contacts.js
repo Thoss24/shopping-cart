@@ -1,8 +1,15 @@
+import Header from "./components/ui/Header";
+import PageWrapper from "./components/ui/PageWrapper";
+import MainContentWrapper from "./components/ui/MainContentWrapper";
+import Footer from "./components/ui/Footer";
+
 const Contacts = () => {
     return (
-        <div>
-            <h1>Hello from Contacts</h1>
-        </div>
+        <PageWrapper>
+            <Header title={'Contacts'} tabOne={'Products'} tabTwo={'Home'} />
+            <MainContentWrapper />
+            <Footer />
+        </PageWrapper>
     )
 };
 

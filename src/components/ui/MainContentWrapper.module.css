@@ -1,5 +1,5 @@
 .products-content-wrapper {
-    height: 80%;
+    min-height: 80vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

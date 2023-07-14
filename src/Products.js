@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import ProductItems from "./components/products/ProductItems";
-import ProductsWrapper from "./components/ui/ProductsWrapper";
-import ProductsContentWrapper from "./components/ui/ProductsContentWrapper";
+import ProductItems from "./components/products/product_items/ProductItems";
+import ProductsWrapper from './components/ui/PageWrapper.js'
+import MainContentWrapper from "./components/ui/MainContentWrapper";
 import Header from "./components/ui/Header";
-import Footer from "./components/ui/Footer";
-import ShoppingCartModal from "./components/modal/ShoppingCartModal";
+import Footer from './components/ui/Footer.js'
+import ShoppingCartModal from './components/products/modal/ShoppingCartModal.js';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [shoppingCartVisible, setShoppingCartVisible] = useState(false)
+  const [shoppingCartVisible, setShoppingCartVisible] = useState(false);
 
   useEffect(() => {
     fetchItemsRequest();
@@ -64,9 +64,9 @@ const Products = () => {
 
   return (
     <ProductsWrapper>
-      <Header title={'Products'} showShoppingCart={handleShoppingCartVisible}/>
-      <ProductsContentWrapper>
-      {products.map((item) => (
+      <Header title={'Products'} tabOne={'Home'} tabTwo={'Contacts'} showShoppingCart={handleShoppingCartVisible}/>
+      <MainContentWrapper>
+      {products.length === 0 ? 'Loading...' : products.map((item) => (
         <ProductItems
           title={item.title}
           price={item.price}
@@ -76,7 +76,7 @@ const Products = () => {
         />
       ))}
       {shoppingCartDisplay}
-      </ProductsContentWrapper>
+      </MainContentWrapper>
       <Footer />
     </ProductsWrapper>
   );

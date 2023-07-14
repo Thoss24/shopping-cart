@@ -1,6 +1,6 @@
 import classes from './ProductItems.module.css';
-import ProductItemWrapper from "../ui/ProductItemWrapper";
-import CartContext from "../store/cart-context";
+import ProductItemWrapper from "../../ui/ProductItemWrapper";
+import CartContext from "../../store/cart-context";
 import React, { useContext, useRef } from "react";
 
 const ProductItems = (props) => {
@@ -14,7 +14,8 @@ const ProductItems = (props) => {
             title: props.title,
             price: props.price,
             amount: Number(itemAmount.current.value),
-            id: props.id
+            id: props.id,
+            image: props.image
         });
     }
 

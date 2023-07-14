@@ -19,12 +19,14 @@
 
 .shell {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 40px;
     flex-direction: row;
     font-size: 21px;
     margin-top: 30px;
     margin-bottom: 30px;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 8px;
 }
 
 .buttons-container {
@@ -32,9 +34,15 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-left: auto;
+}
+
+.image {
+    margin-left: 8px;
 }
 
 .content {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
